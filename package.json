@@ -1,0 +1,19 @@
+{
+  "name": "git-profiles",
+  "version": "1.0.0",
+  "description": "A Typescript command-line application that allows a user to enter a GitHub username, fetches data from the GitHub API, and displays a formatted summary of the user's profile, including their latest repositories and contribution stats.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.12",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.0.0"
+  }
+}
