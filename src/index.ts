@@ -25,14 +25,16 @@ async function fetchGitHubUserData(
 
     if (!response.ok) {
       throw new Error(
-        `Github API request failed with status ${response.statusText}`
+        `⚠️  ___Github API request failed with status ${response.statusText}`
       );
     }
+
+    console.log(response);
 
     const data: any = await response.json(); // will add interfaces later for better typing
     return data;
   } catch (error) {
-    console.error('Error fetching GitHub user data:', error);
+    console.error(error);
     return null; // ! handle error better than this
   } finally {
     isFetching = false;
@@ -45,7 +47,9 @@ async function main() {
   const user: any = await fetchGitHubUserData(username);
 
   if (user) {
+    console.log('🟢 Github data retrieved successfully');
     console.log(`User Data: ${username}: ${user.name}`);
+    console.log(`Email: ${user.email ? user.email : '❗No email found'}`);
     console.log('Rate Limit Remaining:', rateLimitRemaining);
     console.log('Rate Limit Reset:', rateLimitReset);
   }
